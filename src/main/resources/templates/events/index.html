@@ -11,13 +11,23 @@
             <th>ID</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Location</th>
+            <th>Rainy Day Options</th>
+            <th>There Is Preregistration</th>
+            <th>Maximum Capacity</th>
             <th>Contact Email</th>
+
+
         </tr>
     </thead>
     <tr th:each="event : ${events}">
         <td th:text="${event.id}"></td>
         <td th:text="${event.name}"></td>
         <td th:text="${event.description}"></td>
+        <td th:text="${event.eventLocation}"></td>
+        <td th:text="${event.rainyDayOptions}"></td>
+        <td th:text="${event.preRegistrationRequired}"></td>
+        <td th:text="${event.numberOfAttendees}"></td>
         <td th:text="${event.contactEmail}"></td>
     </tr>
 </table>

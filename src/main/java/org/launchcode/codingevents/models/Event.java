@@ -1,8 +1,6 @@
 package org.launchcode.codingevents.models;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Objects;
 
 /**
@@ -24,11 +22,28 @@ public class Event {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-    public Event(String name, String description, String contactEmail) {
+    @NotBlank(message = "Location is required.")
+    @NotNull(message = "Location must be given.")
+    private String eventLocation;
+
+    @AssertTrue(message = "All Events Need A Rainy Day Option!")
+    private Boolean rainyDayOptions;
+
+    @AssertTrue(message = "All Events Need Preregistration!")
+    private Boolean preRegistrationRequired;
+
+    @Size(min = 1, message = "There must be at least one attendee.")
+    private String numberOfAttendees;
+
+    public Event(String name, String description, String contactEmail, String eventLocation, Boolean rainyDayOptions, Boolean preRegistrationRequired, String numberOfAttendees) {
         this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
+        this.eventLocation = eventLocation;
+        this.rainyDayOptions = rainyDayOptions;
+        this.preRegistrationRequired = preRegistrationRequired;
+        this.numberOfAttendees = numberOfAttendees;
     }
 
     public Event() {
@@ -62,6 +77,38 @@ public class Event {
 
     public int getId() {
         return id;
+    }
+
+    public String getEventLocation() {
+        return eventLocation;
+    }
+
+    public void setEventLocation(String eventLocation) {
+        this.eventLocation = eventLocation;
+    }
+
+    public Boolean getPreRegistrationRequired() {
+        return preRegistrationRequired;
+    }
+
+    public void setPreRegistrationRequired(Boolean preRegistrationRequired) {
+        this.preRegistrationRequired = preRegistrationRequired;
+    }
+
+    public String getNumberOfAttendees() {
+        return numberOfAttendees;
+    }
+
+    public void setNumberOfAttendees(String numberOfAttendees) {
+        this.numberOfAttendees = numberOfAttendees;
+    }
+
+    public Boolean getRainyDayOptions() {
+        return rainyDayOptions;
+    }
+
+    public void setRainyDayOptions(Boolean rainyDayOptions) {
+        this.rainyDayOptions = rainyDayOptions;
     }
 
     @Override
