@@ -16,6 +16,7 @@
             <th>There Is Preregistration</th>
             <th>Maximum Capacity</th>
             <th>Contact Email</th>
+            <th>Type</th>
 
 
         </tr>
@@ -29,6 +30,7 @@
         <td th:text="${event.preRegistrationRequired}"></td>
         <td th:text="${event.numberOfAttendees}"></td>
         <td th:text="${event.contactEmail}"></td>
+        <td th:text="${event.type.displayName}"></td>
     </tr>
 </table>
 

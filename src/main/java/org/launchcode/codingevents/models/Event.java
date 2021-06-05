@@ -35,7 +35,10 @@ public class Event {
     @Size(min = 1, message = "There must be at least one attendee.")
     private String numberOfAttendees;
 
-    public Event(String name, String description, String contactEmail, String eventLocation, Boolean rainyDayOptions, Boolean preRegistrationRequired, String numberOfAttendees) {
+    private EventType type;
+
+    public Event(String name, String description, String contactEmail, String eventLocation, Boolean rainyDayOptions,
+                 Boolean preRegistrationRequired, String numberOfAttendees, EventType type) {
         this();
         this.name = name;
         this.description = description;
@@ -44,6 +47,7 @@ public class Event {
         this.rainyDayOptions = rainyDayOptions;
         this.preRegistrationRequired = preRegistrationRequired;
         this.numberOfAttendees = numberOfAttendees;
+        this.type = type;
     }
 
     public Event() {
@@ -109,6 +113,14 @@ public class Event {
 
     public void setRainyDayOptions(Boolean rainyDayOptions) {
         this.rainyDayOptions = rainyDayOptions;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     @Override
