@@ -23,7 +23,7 @@ public class Event {
     private String contactEmail;
 
     @NotBlank(message = "Location is required.")
-    @NotNull(message = "Location must be given.")
+
     private String eventLocation;
 
     @AssertTrue(message = "All Events Need A Rainy Day Option!")

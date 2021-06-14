@@ -26,14 +26,14 @@
     </div>
     <div class="form-group">
         <label>Are There Rainy Day Options?
-            <p>Click the box for yes:<input type="checkbox" th:field="${event.rainyDayOptions}" class="form-control"
+            <p>Click the box for yes:<input type="checkbox" th:value="${event.registrationRequired}" th:field="${event.rainyDayOptions}" class="form-control"
             ></p>
         </label>
         <p class="error" th:errors="${event.rainyDayOptions}"></p>
     </div>
     <div class="form-group">
         <label>Is Preregistration Required?
-         <p>Click the box for yes:<input type="checkbox" th:field="${event.preRegistrationRequired}" class="form-control"
+         <p>Click the box for yes:<input type="checkbox" th:value="${event.registrationRequired}" th:field="${event.preRegistrationRequired}" class="form-control"
          ></p>
         </label>
         <p class="error" th:errors="${event.preRegistrationRequired}"></p>

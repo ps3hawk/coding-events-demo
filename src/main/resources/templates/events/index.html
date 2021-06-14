@@ -5,6 +5,7 @@
 
 <header th:replace="fragments :: header"></header>
 
+<p th:unless="${events} and ${events.size()}">No Events Yet!</p>
 <table class="table table-striped">
     <thead>
         <tr>
